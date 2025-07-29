@@ -14,13 +14,13 @@ class Solution:
         
         mid = start + (end - start) // 2
         root = TreeNode(nums[mid])
-        left = self.makeBST(nums, start, mid - 1)
-        right = self.makeBST(nums, mid + 1, end)
+        root.left = self.makeBST(nums, start, mid - 1)
+        root.right = self.makeBST(nums, mid + 1, end)
 
-        if left:
-            root.left = left
-        if right:
-            root.right = right
+        # if left:
+        #     root.left = left
+        # if right:
+        #     root.right = right
         return root
 
     def sortedArrayToBST(self, nums: List[int]) -> Optional[TreeNode]:
